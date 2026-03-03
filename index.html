@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aarav & Ananya Wedding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+button {
+    padding: 12px 30px;
+    background: gold;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+input, select {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+}
+
+iframe {
+    width: 90%;
+    height: 300px;
+    border: 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SECTION 1 -->
+<section>
+    <h1>Two Souls.<br>One Forever.</h1>
+    <button onclick="scrollToSection()">Tap To Open</button>
+</section>
+
+<!-- SECTION 2 -->
+<section id="mainContent" class="fade-in">
+    <h1>Aarav<br>&<br>Ananya</h1>
+    <p>Are Getting Married</p>
+</section>
+
+<!-- SECTION 3 -->
+<section class="fade-in">
+    <h2>Save The Date</h2>
+    <p>21 December 2026</p>
+    <p>Jaipur, Rajasthan</p>
+</section>
+
+<!-- SECTION 4 -->
+<section class="fade-in">
+    <h2>Venue</h2>
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!..." 
+    allowfullscreen>
+    </iframe>
+</section>
+
+<!-- SECTION 5 -->
+<section class="fade-in">
+    <h2>RSVP</h2>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="number" placeholder="Number of Guests"><br>
+    <select>
+        <option>Will You Attend?</option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+</section>
+
+<!-- SECTION 6 -->
+<section class="fade-in">
+    <h2>Countdown</h2>
+    <h3 id="countdown"></h3>
+</section>
+
+<script>
+function scrollToSection() {
+    document.getElementById("mainContent").scrollIntoView();
+}
+
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+    threshold: 0.3
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+var countDownDate = new Date("Dec 21, 2026 00:00:00").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  document.getElementById("countdown").innerHTML = days + " Days To Go";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "It's Wedding Day!";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
