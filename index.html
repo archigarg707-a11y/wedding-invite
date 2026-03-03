@@ -3,128 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Invite</title>
+<title>Aarav & Ananya Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
-  font-family:'Poppins', sans-serif;
-  background:#fdf6ec;
-  scroll-behavior:smooth;
+body{
+margin:0;
+padding:0;
+background:#fdf6ec;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
-section{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:30px;
-}
-
-/* GATE SCREEN */
+/* ================= GATE ================= */
 
 #gateContainer{
-  position:fixed;
-  width:100%;
-  height:100vh;
-  display:flex;
-  z-index:9999;
+position:fixed;
+width:100%;
+height:100vh;
+display:flex;
+z-index:9999;
 }
 
 .gate{
-  width:50%;
-  height:100%;
-  background:linear-gradient(to bottom,#c6a75e,#a8842f);
-  transition:1.8s ease;
+width:50%;
+height:100%;
+background:linear-gradient(to bottom,#8b6a2b,#c9a227);
+transition:2s ease;
+box-shadow:inset 0 0 50px rgba(0,0,0,0.5);
 }
 
-.open-left{
-  transform:translateX(-100%);
-}
-
-.open-right{
-  transform:translateX(100%);
-}
+.open-left{transform:translateX(-100%);}
+.open-right{transform:translateX(100%);}
 
 #openButton{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  padding:15px 35px;
-  background:white;
-  border:none;
-  font-size:16px;
-  cursor:pointer;
-  font-family:'Playfair Display', serif;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+padding:18px 40px;
+background:white;
+border:none;
+font-size:18px;
+font-family:'Playfair Display',serif;
+cursor:pointer;
+letter-spacing:2px;
 }
 
-/* Floral Background */
+/* ================= SECTIONS ================= */
 
-.floral{
-  background:url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80');
-  background-size:cover;
-  background-position:center;
-  color:white;
-  position:relative;
-}
-
-.overlay{
-  background:rgba(0,0,0,0.5);
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-}
-
-.content{
-  position:relative;
-  z-index:2;
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
+position:relative;
 }
 
 h1{
-  font-family:'Great Vibes', cursive;
-  font-size:60px;
-  margin:10px 0;
+font-family:'Great Vibes',cursive;
+font-size:70px;
+margin:10px 0;
+color:#b8860b;
 }
 
 h2{
-  font-family:'Playfair Display', serif;
-  font-size:28px;
-  margin:10px 0;
+font-family:'Playfair Display',serif;
+font-size:28px;
+margin:10px 0;
 }
 
 .fade{
-  opacity:0;
-  transform:translateY(20px);
-  transition:1.2s ease;
+opacity:0;
+transform:translateY(30px);
+transition:1.5s ease;
 }
 
 .fade.show{
-  opacity:1;
-  transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
-.map iframe{
-  width:90%;
-  height:300px;
-  border:0;
-  margin-top:20px;
+/* ================= HERO ================= */
+
+.hero{
+background:url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+color:white;
 }
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background:rgba(0,0,0,0.5);
+}
+
+.content{
+position:relative;
+z-index:2;
+}
+
+/* ================= EVENTS ================= */
+
+.haldi{
+background:#fff4d6;
+}
+
+.mehendi{
+background:#e8f5e9;
+}
+
+.sangeet{
+background:#f3e5f5;
+}
+
+.wedding{
+background:#fde0dc;
+}
+
+/* ================= CARDS ================= */
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+max-width:600px;
+}
+
+/* ================= COUNTDOWN ================= */
+
+#countdown{
+font-size:26px;
+font-weight:bold;
+color:#8b6a2b;
+}
+
+/* ================= FOOTER ================= */
 
 .footer{
-  background:#a8842f;
-  color:white;
-  padding:20px;
-  text-align:center;
+background:#8b6a2b;
+color:white;
+padding:30px;
+text-align:center;
 }
 
 </style>
@@ -132,75 +163,126 @@ h2{
 
 <body>
 
-<!-- GATE -->
+<!-- ROYAL GATE -->
+
 <div id="gateContainer">
-  <div id="leftGate" class="gate"></div>
-  <div id="rightGate" class="gate"></div>
-  <button id="openButton" onclick="openGate()">Tap To Open</button>
+<div id="leftGate" class="gate"></div>
+<div id="rightGate" class="gate"></div>
+<button id="openButton" onclick="openGate()">Tap To Enter</button>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- HERO -->
 
-<section class="floral">
-  <div class="overlay"></div>
-  <div class="content fade">
-    <h2>With the blessings of our parents</h2>
-    <h1>Aarav <br>&<br> Ananya</h1>
-    <h2>Are Getting Married</h2>
-  </div>
+<section class="hero">
+<div class="overlay"></div>
+<div class="content fade">
+<h2>With the blessings of our parents</h2>
+<h1>Aarav <br>&<br> Ananya</h1>
+<h2>Are Getting Married</h2>
+</div>
 </section>
+
+<!-- SAVE THE DATE -->
 
 <section>
-  <div class="fade">
-    <h2>Save The Date</h2>
-    <h2>21 December 2026</h2>
-    <h2>Jaipur, Rajasthan</h2>
-  </div>
+<div class="card fade">
+<h2>Save The Date</h2>
+<h2>21 December 2026</h2>
+<h2>Jaipur, Rajasthan</h2>
+<p id="countdown"></p>
+</div>
 </section>
 
-<section class="floral">
-  <div class="overlay"></div>
-  <div class="content fade">
-    <h2>Wedding Ceremony</h2>
-    <h2>7:00 PM Onwards</h2>
-  </div>
+<!-- HALDI -->
+
+<section class="haldi">
+<div class="card fade">
+<h2>Haldi Ceremony 🌼</h2>
+<h3>19 December 2026</h3>
+<h3>10:00 AM</h3>
+</div>
 </section>
 
-<section class="map">
-  <div class="fade">
-    <h2>Venue</h2>
-    <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.189...">
-    </iframe>
-  </div>
+<!-- MEHENDI -->
+
+<section class="mehendi">
+<div class="card fade">
+<h2>Mehendi 🌿</h2>
+<h3>19 December 2026</h3>
+<h3>5:00 PM</h3>
+</div>
+</section>
+
+<!-- SANGEET -->
+
+<section class="sangeet">
+<div class="card fade">
+<h2>Sangeet Night 💃</h2>
+<h3>20 December 2026</h3>
+<h3>7:00 PM</h3>
+</div>
+</section>
+
+<!-- WEDDING -->
+
+<section class="wedding">
+<div class="card fade">
+<h2>Wedding Ceremony 🔔</h2>
+<h3>21 December 2026</h3>
+<h3>7:00 PM Onwards</h3>
+</div>
+</section>
+
+<!-- VENUE -->
+
+<section>
+<div class="card fade">
+<h2>Venue</h2>
+<h3>Royal Palace Banquet</h3>
+<a href="https://maps.google.com" target="_blank">
+<button style="padding:10px 25px;background:#8b6a2b;color:white;border:none;border-radius:10px;">Open Map</button>
+</a>
+</div>
 </section>
 
 <div class="footer">
-  <h2>We can't wait to celebrate with you ✨</h2>
+<h2>We can’t wait to celebrate with you ✨</h2>
 </div>
 
 <script>
 
+/* Gate Animation */
 function openGate(){
-  document.getElementById("leftGate").classList.add("open-left");
-  document.getElementById("rightGate").classList.add("open-right");
-  document.getElementById("openButton").style.display="none";
-  setTimeout(function(){
-    document.getElementById("gateContainer").style.display="none";
-  },1800);
+document.getElementById("leftGate").classList.add("open-left");
+document.getElementById("rightGate").classList.add("open-right");
+document.getElementById("openButton").style.display="none";
+setTimeout(()=>{
+document.getElementById("gateContainer").style.display="none";
+},2000);
 }
 
+/* Fade Animation */
 const faders=document.querySelectorAll('.fade');
-
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
 },{threshold:0.3});
-
 faders.forEach(f=>observer.observe(f));
+
+/* Countdown */
+const weddingDate=new Date("December 21, 2026 19:00:00").getTime();
+const timer=setInterval(()=>{
+const now=new Date().getTime();
+const diff=weddingDate-now;
+const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+document.getElementById("countdown").innerHTML=
+days+" Days "+hours+" Hours "+minutes+" Minutes Left";
+},1000);
 
 </script>
 
